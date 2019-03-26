@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.alphabyte.maths.activity.MainActivity">
+    <item
+        android:id="@+id/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:orderInCategory="101"
+        android:title="Search" />
+    <item
+        android:id="@+id/darktheme"
+        android:orderInCategory="100"
+        android:title="Dark theme"
+        android:checkable="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/fontSize"
+        android:orderInCategory="101"
+        android:title="Font Size"/>
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="102"
+        android:title="About Us"/>
+</menu>

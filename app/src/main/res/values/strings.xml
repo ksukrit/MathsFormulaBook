@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Maths Formula Book</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="placeholder_subtopic">Subtopic</string>
+    <string name="placeholder_information">Information</string>
+    <string name="placeholder_topic">Topic</string>
+    <string name="single_formula">Hello</string>
+    <string name="title_activity_topic">Topic</string>
+</resources>
