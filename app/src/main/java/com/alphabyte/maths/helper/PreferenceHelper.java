@@ -14,8 +14,8 @@ import java.util.List;
 public class PreferenceHelper {
     Context mContext;
     private String FAVOURITE_TOPIC = "favourite";
-    private String DARK_THEME = "dark_theme";
-    private String FONT_SIZE = "font_size";
+    private String DARK_THEME = "darkTheme";
+    private String FONT_SIZE = "fontSize";
     Gson gson;
     boolean darkTheme;
     int fontSize;

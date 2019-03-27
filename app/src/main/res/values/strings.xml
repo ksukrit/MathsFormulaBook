@@ -11,4 +11,6 @@
     <string name="placeholder_topic">Topic</string>
     <string name="single_formula">Hello</string>
     <string name="title_activity_topic">Topic</string>
+    <string name="key_font">fontSize</string>
+    <string name="key_darkTheme">darkTheme</string>
 </resources>

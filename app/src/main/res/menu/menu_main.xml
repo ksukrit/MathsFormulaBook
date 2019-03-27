@@ -9,6 +9,10 @@
         android:icon="@drawable/ic_search_black_24dp"
         android:orderInCategory="101"
         android:title="Search" />
+
+</menu>
+
+    <!--
     <item
         android:id="@+id/darktheme"
         android:orderInCategory="100"
@@ -23,4 +27,4 @@
         android:id="@+id/about"
         android:orderInCategory="102"
         android:title="About Us"/>
-</menu>
+        -->

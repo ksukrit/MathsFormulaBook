@@ -1,0 +1,37 @@
+<androidx.preference.PreferenceScreen
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="General">
+        <Preference
+            app:key="feedback"
+            app:title="Send Feedback"
+            app:summary="Report technical issues or suggest new features"/>
+        <Preference
+            app:key="about"
+            app:title="About Us"/>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        app:title="Customize">
+
+        <SwitchPreferenceCompat
+            app:key="@string/key_darkTheme"
+            app:title="Enable Dark Theme"
+            app:summary="Enable dark theme throughout app (Restarts App Automatically)"
+            app:defaultValue="false"/>
+
+        <ListPreference
+            app:key="@string/key_font"
+            app:title="Set Font Size"
+            app:entries="@array/settings_list_preference_font"
+            app:entryValues="@array/settings_list_preference_values"
+            app:defaultValue="2"
+            app:summary="Set font size according to your liking"/>
+
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

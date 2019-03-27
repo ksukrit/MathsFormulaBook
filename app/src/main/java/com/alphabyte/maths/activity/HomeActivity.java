@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import com.alphabyte.maths.R;
 import com.alphabyte.maths.fragment.FavouriteFragment;
 import com.alphabyte.maths.fragment.HomeFragment;
-import com.alphabyte.maths.fragment.RequestFragment;
+import com.alphabyte.maths.fragment.SettingsFragment;
 import com.alphabyte.maths.helper.PreferenceHelper;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -67,10 +67,10 @@ public class HomeActivity extends AppCompatActivity {
                             filter = 0;
                             getSupportActionBar().setTitle("Favourites");
                             selectedFragment = new FavouriteFragment();                            break;
-                        case R.id.navigation_request:
+                        case R.id.navigation_settings:
                             filter = 0;
-                            getSupportActionBar().setTitle("Request For New Topics");
-                            selectedFragment = new RequestFragment();
+                            getSupportActionBar().setTitle("Settings");
+                            selectedFragment = new SettingsFragment();
                             break;
                     }
 

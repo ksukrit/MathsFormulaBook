@@ -49,27 +49,22 @@ public class MathView extends WebView {
             pixelSizeConversion(mTypeArray.getDimension(R.styleable.MathView_setTextSize,default_text_size));
             setDisplayText(mTypeArray.getString(R.styleable.MathView_setText));
             setClickable(mTypeArray.getBoolean(R.styleable.MathView_setClickable,false));
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Log.d(TAG,"Exception:"+e.toString());
         }
 
 
     }
-    public void setViewBackgroundColor(int color)
-    {
+    public void setViewBackgroundColor(int color) {
         setBackgroundColor(color);
         this.invalidate();
     }
 
     private void pixelSizeConversion(float dimension) {
-        if (dimension==default_text_size)
-        {
+        if (dimension==default_text_size) {
             setTextSize((int)default_text_size);
         }
-        else
-        {
+        else {
             int pixel_dimen_equivalent_size = (int) ((double) dimension / 1.6);
             setTextSize(pixel_dimen_equivalent_size);
         }
@@ -77,8 +72,7 @@ public class MathView extends WebView {
 
 
     @SuppressLint({"SetJavaScriptEnabled", "NewApi"})
-    private void configurationSettingWebView()
-    {
+    private void configurationSettingWebView() {
         getSettings().setJavaScriptEnabled(true);
         getSettings().setAllowFileAccess(true);
         getSettings().setDisplayZoomControls(false);
@@ -96,8 +90,7 @@ public class MathView extends WebView {
     }
 
 
-    private String getOfflineKatexConfig()
-    {
+    private String getOfflineKatexConfig() {
         String offline_config = "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "    <head>\n" +
@@ -135,20 +128,19 @@ public class MathView extends WebView {
 
     }
 
-    public void setTextSize(int size)
-    {
+    public void setTextSize(int size) {
         this.text_size = size;
         loadData();
 
     }
-    public void setTextColor(int color)
-    {
+
+    public void setTextColor(int color) {
 
         this.text_color = color;
         loadData();
     }
-    private String getHexColor(int intColor)
-    {
+
+    private String getHexColor(int intColor) {
         //Android and javascript color format differ javascript support Hex color, so the android color which user sets is converted to hexcolor to replicate the same in javascript.
         String hexColor = String.format("#%06X", (0xFFFFFF & intColor));
         Log.d(TAG,"Hex Color:"+hexColor);
@@ -167,32 +159,24 @@ public class MathView extends WebView {
         this.text_size =(int) default_text_size;
     }
 
-    private void loadData()
-    {
-        if (this.display_text!=null)
-        {
+    private void loadData() {
+        if (this.display_text!=null) {
             this.loadDataWithBaseURL("null",getOfflineKatexConfig(),"text/html","UTF-8","about:blank");
         }
-
     }
 
-    public void setClickable(boolean is_clickable)
-    {
+    public void setClickable(boolean is_clickable) {
         this.clickable = is_clickable;
         this.invalidate();
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(clickable)
-        {
+        if(clickable) {
             return false;
-        }
-        else
-        {
+        } else {
             return true;
         }
-
     }
 
 }

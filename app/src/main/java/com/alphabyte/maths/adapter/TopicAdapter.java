@@ -114,6 +114,9 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
             @Override
             public void onClick(View view) {
                 listener.onClicked(position);
+                if(holder.expansionHeader.getVisibility() == View.VISIBLE){
+                    holder.expansionLayout.toggle(true);
+                }
             }
         });
 

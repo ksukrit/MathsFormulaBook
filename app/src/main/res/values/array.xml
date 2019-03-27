@@ -20,4 +20,18 @@
         <item name="grey_500" type="color">#9e9e9e</item>
         <item name="blue_grey_500" type="color">#607d8b</item>
     </array>
+    <string-array name="settings_list_preference_font">
+        <item>8sp</item>
+        <item>10 sp</item>
+        <item>14 sp (DEFAULT)</item>
+        <item>16 sp</item>
+        <item>20sp</item>
+    </string-array>
+    <string-array name="settings_list_preference_values">
+        <item>8</item>
+        <item>10</item>
+        <item>14</item>
+        <item>16</item>
+        <item>20</item>
+    </string-array>
 </resources>

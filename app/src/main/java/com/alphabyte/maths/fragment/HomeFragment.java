@@ -1,7 +1,6 @@
 package com.alphabyte.maths.fragment;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
@@ -12,12 +11,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.alphabyte.maths.R;
 import com.alphabyte.maths.activity.DetailsActivity;
-import com.alphabyte.maths.activity.HomeActivity;
 import com.alphabyte.maths.adapter.HomeAdapter;
 import com.alphabyte.maths.helper.ClickListener;
 import com.alphabyte.maths.helper.DividerItemDecoration;
@@ -33,7 +30,6 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
@@ -144,17 +140,20 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_main, menu);
+        /*
         MenuItem checkBox = menu.findItem(R.id.darktheme);
         if(preferenceHelper.isDarkTheme()){
             checkBox.setChecked(true);
-        }
+        }**/
         MenuItem searchItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         search(searchView);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+    /*
     public boolean onOptionsItemSelected(MenuItem menuItem) {
+
         switch (menuItem.getItemId()) {
             case R.id.fontSize:
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
@@ -193,7 +192,7 @@ public class HomeFragment extends Fragment {
                 break;
         }
         return super.onOptionsItemSelected(menuItem);
-    }
+    }*/
 
     private int getProgess(int cFontSize) {
         switch (cFontSize) {

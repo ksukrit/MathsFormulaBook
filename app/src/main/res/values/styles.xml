@@ -9,11 +9,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
 
     </style>
 
     <style name="AppTheme.DarkTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:textColorPrimary">@color/colorAccentDark</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
 
 
