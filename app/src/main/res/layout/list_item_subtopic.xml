@@ -29,7 +29,7 @@
             android:layout_marginTop="@dimen/text_margin"
             android:layout_marginBottom="@dimen/text_margin"
             android:text="@string/placeholder_subtopic"
-            android:textColor="@color/colorAccent"
+            android:textColor="?colorAccent"
             android:id="@+id/subtopicName"/>
 
         <RelativeLayout

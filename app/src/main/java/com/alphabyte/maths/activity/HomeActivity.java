@@ -1,5 +1,6 @@
 package com.alphabyte.maths.activity;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 public class HomeActivity extends AppCompatActivity {
@@ -22,11 +24,13 @@ public class HomeActivity extends AppCompatActivity {
     AppBarLayout appBarLayout;
     private Menu menu;
     int filter = 1;
+    boolean darkTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         PreferenceHelper preferenceHelper = new PreferenceHelper(this);
-        if(preferenceHelper.isDarkTheme()){
+        darkTheme = preferenceHelper.isDarkTheme();
+        if(darkTheme){
             setTheme(R.style.AppTheme_DarkTheme);
         }
 
@@ -41,6 +45,12 @@ public class HomeActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         bottomNav.setSelectedItemId(R.id.navigation_home);
 
+        ColorStateList colorStateList = ContextCompat.getColorStateList(this,R.color.nav_item_foreground_dark);
+
+        if(darkTheme){
+            bottomNav.setItemTextColor(colorStateList);
+            bottomNav.setItemIconTintList(colorStateList);
+        }
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.transition.Slide;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -92,6 +93,7 @@ public class HomeFragment extends Fragment {
                     mFirebaseAnalytics.logEvent("view_topic", params);
 
                     startActivity(intent);
+                    //getActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 }
 
                 @Override
@@ -104,6 +106,12 @@ public class HomeFragment extends Fragment {
             e.printStackTrace();
             Log.i("Error", "onViewCreated: " + e.getMessage());
         }
+    }
+
+    void setupWindowAnimations(){
+        android.transition.Slide slide = new Slide();
+        slide.setDuration(1000);
+        getActivity().getWindow().setExitTransition(slide);
     }
 
     @Nullable
@@ -119,6 +127,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         PACKAGE_NAME = getContext().getPackageName();
+        setupWindowAnimations();
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         ((LinearLayoutManager) mLayoutManager).setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(mLayoutManager);

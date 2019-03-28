@@ -1,6 +1,8 @@
 package com.alphabyte.maths.activity;
 
 import android.os.Bundle;
+import android.transition.Fade;
+import android.transition.Slide;
 import android.util.Log;
 
 import com.alphabyte.maths.R;
@@ -23,6 +25,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 public class DetailsActivity extends AppCompatActivity implements ClickListener {
 
@@ -59,6 +62,7 @@ public class DetailsActivity extends AppCompatActivity implements ClickListener 
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         Gson gson = new Gson();
+        setupWindowAnimations();
 
 
 
@@ -91,12 +95,14 @@ public class DetailsActivity extends AppCompatActivity implements ClickListener 
                 helper.removeTopic(topic);
                 Snackbar.make(view,"Removed Topic From Favourites",Snackbar.LENGTH_LONG).show();
                 fab.setImageDrawable(ContextCompat.getDrawable(DetailsActivity.this,R.drawable.ic_favorite_border_black_24dp));
+                favourite = false;
             }else{
                 helper.addTopic(topic);
                 Snackbar.make(view,"Added Topic To Favourites",Snackbar.LENGTH_LONG).show();
                 //String favString = helper.getFavouriteList();
                 // Favourite fav = gson.fromJson(favString,Favourite.class);
                 fab.setImageDrawable(ContextCompat.getDrawable(DetailsActivity.this,R.drawable.ic_favorite_black_24dp));
+                favourite = true;
             }
         });
 
@@ -105,6 +111,16 @@ public class DetailsActivity extends AppCompatActivity implements ClickListener 
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    void setupWindowAnimations(){
+        android.transition.Fade fade = new Fade();
+        fade.setDuration(500);
+        getWindow().setEnterTransition(fade);
+
+        Slide slide = new Slide();
+        slide.setDuration(1000);
+        getWindow().setReturnTransition(slide);
     }
 
     boolean isFavourite(Maths.Topic topic, List<Maths.Topic> topicList){

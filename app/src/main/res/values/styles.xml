@@ -4,17 +4,15 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowActivityTransitions">true</item>
 
-
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">?themePrimary</item>
+        <item name="colorPrimaryDark">?themePrimaryDark</item>
+        <item name="colorAccent">?themeAccent</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
 
     </style>
 
     <style name="AppTheme.DarkTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:textColorPrimary">@color/colorAccentDark</item>
+        <item name="themeContentTextColor">@color/colorAccentDark</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
 
@@ -22,6 +20,13 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="themePrimary">@color/greenA400</item>
+        <item name="themePrimaryDark">@color/greenA700</item>
+        <item name="themeAccent">@color/colorAccentgreen</item>
+        <item name="themeContentBackground">@color/white</item>
+        <item name="themeContentTextColor">@android:color/darker_gray</item>
+        <item name="themeContentTextColoOnPrimary">@color/white</item>
+        <item name="themeTextColorSuccess">@color/greenA700</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

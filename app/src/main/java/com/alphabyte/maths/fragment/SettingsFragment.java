@@ -4,6 +4,7 @@ package com.alphabyte.maths.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.util.Log;
 import com.alphabyte.maths.R;
 import com.alphabyte.maths.activity.HomeActivity;
 import com.alphabyte.maths.helper.PreferenceHelper;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -28,15 +30,22 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         setPreferencesFromResource(R.xml.preference_screen,rootKey);
         preferenceHelper = new PreferenceHelper(getContext());
 
+        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
+
         SwitchPreferenceCompat switchPreferenceCompat = (SwitchPreferenceCompat) findPreference(getString(R.string.key_darkTheme));
         switchPreferenceCompat.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 SwitchPreferenceCompat switchPreferenceCompat = (SwitchPreferenceCompat) preference;
                 preferenceHelper.setDarkTheme(!switchPreferenceCompat.isChecked());
+                Bundle params = new Bundle();
+                params.putString("DarkTheme",String.valueOf(!switchPreferenceCompat.isChecked()));
+                mFirebaseAnalytics.logEvent("DarkTheme", params);
+
                 Log.i("TAG", "onPreferenceChange: " + String.valueOf(!switchPreferenceCompat.isChecked()));
                 Intent launchIntent = new Intent(getActivity(), HomeActivity.class);
                 startActivity(launchIntent);
+                //getActivity().recreate();
                 return true;
             }
         });
@@ -67,38 +76,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     }
 
-    private static void bindPreferenceSummaryToValue(Preference preference) {
-        preference.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
-    }
-
-    private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
-        @Override
-        public boolean onPreferenceChange(Preference preference, Object newValue) {
-            String stringValue = newValue.toString();
-
-            if (preference instanceof ListPreference) {
-                // For list preferences, look up the correct display value in
-                // the preference's 'entries' list.
-                ListPreference listPreference = (ListPreference) preference;
-                int index = listPreference.findIndexOfValue(stringValue);
-                int d = Integer.parseInt(listPreference.getEntryValues()[index].toString());
-                Log.i("TAG", "onPreferenceChange: " + d);
-
-                /* Set the summary to reflect the new value.
-                preference.setSummary(
-                        index >= 0
-                                ? listPreference.getEntries()[index]
-                                : null);
-                */
-            } else if(preference instanceof SwitchPreferenceCompat){
-                SwitchPreferenceCompat switchPreferenceCompat = (SwitchPreferenceCompat) preference;
-                Log.i("TAG", "onPreferenceChange: " + String.valueOf(!switchPreferenceCompat.isChecked()));
-            } else {
-                preference.setSummary(stringValue);
-            }
-            return true;
-        }
-    };
 
     private void sendFeedback(Context context) {
         String body = null;
@@ -109,12 +86,15 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                     "\n Device Model: " + Build.MODEL + "\n Device Manufacturer: " + Build.MANUFACTURER;
         } catch (PackageManager.NameNotFoundException e) {
         }
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("*/*");
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"links2phone@gmail.com"});
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Query from android app");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Query from MathsFormulaBook app");
         intent.putExtra(Intent.EXTRA_TEXT, body);
-        getActivity().startActivity(intent);
+        //getActivity().startActivity(intent);
+        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivity(intent);
+        }
 
     }
 }
