@@ -7,6 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.alphabyte.maths.R;
 import com.alphabyte.maths.activity.DetailsActivity;
 import com.alphabyte.maths.adapter.HomeAdapter;
@@ -14,18 +21,12 @@ import com.alphabyte.maths.helper.ClickListener;
 import com.alphabyte.maths.helper.DividerItemDecoration;
 import com.alphabyte.maths.helper.PreferenceHelper;
 import com.alphabyte.maths.models.Favourite;
-import com.alphabyte.maths.models.Maths;
+import com.alphabyte.maths.models.TopicList;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -33,7 +34,7 @@ public class FavouriteFragment extends Fragment {
 
     PreferenceHelper helper;
     String favourites;
-    List<Maths.Topic> topicList;
+    List<TopicList.TopicDetails> topicList;
     HomeAdapter adapter;
     RecyclerView.LayoutManager mLayoutManager;
     Gson gson;
@@ -59,14 +60,11 @@ public class FavouriteFragment extends Fragment {
         adapter = new HomeAdapter(topicList, getContext(), new ClickListener() {
             @Override
             public void onClicked(int position) {
-                Maths.Topic topic = topicList.get(position);
+                TopicList.TopicDetails topic = topicList.get(position);
 
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("topic_data", topic);
+                intent.putExtra("topic_file_name",topic.getTopic_file_name());
                 intent.putExtra("topic_selected", topic.getTopic_name());
-                intent.putExtras(bundle);
-                intent.putExtra("subtopic_index", 0);
 
                 startActivity(intent);
 

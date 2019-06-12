@@ -23,6 +23,7 @@
     <string-array name="settings_list_preference_font">
         <item>8sp</item>
         <item>10 sp</item>
+        <item>12 sp</item>
         <item>14 sp (DEFAULT)</item>
         <item>16 sp</item>
         <item>20sp</item>
@@ -30,6 +31,7 @@
     <string-array name="settings_list_preference_values">
         <item>8</item>
         <item>10</item>
+        <item>12</item>
         <item>14</item>
         <item>16</item>
         <item>20</item>

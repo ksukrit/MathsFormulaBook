@@ -78,9 +78,9 @@ public class MathView extends WebView {
         getSettings().setDisplayZoomControls(false);
         getSettings().setBuiltInZoomControls(false);
         getSettings().setSupportZoom(false);
-        getSettings().setAppCacheEnabled(true);
-        getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        //getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        //getSettings().setAppCacheEnabled(true);
+        //getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
     }
 
 

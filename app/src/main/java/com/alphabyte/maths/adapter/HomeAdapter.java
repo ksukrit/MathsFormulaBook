@@ -11,25 +11,26 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.alphabyte.maths.R;
 import com.alphabyte.maths.helper.ClickListener;
-import com.alphabyte.maths.models.Maths;
+import com.alphabyte.maths.models.TopicList;
 
 import java.util.List;
 
-import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
 
-    List<Maths.Topic> topicList;
-    List<Maths.Topic> mFilteredList;
+    List<TopicList.TopicDetails> topicList;
+    List<TopicList.TopicDetails> mFilteredList;
     Context mContext;
     ClickListener listener;
 
 
-    public HomeAdapter(List<Maths.Topic> topicList, Context mContext, ClickListener listener) {
+    public HomeAdapter(List<TopicList.TopicDetails> topicList, Context mContext, ClickListener listener) {
         this.topicList = topicList;
         mFilteredList = topicList;
         this.mContext = mContext;
@@ -46,13 +47,15 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     @Override
     public void onBindViewHolder(HomeViewHolder holder, final int position) {
         //Maths.Topic topic = topicList.get(position);
-        Maths.Topic topic = mFilteredList.get(position);
+        TopicList.TopicDetails topic = mFilteredList.get(position);
         holder.topicName.setText(topic.getTopic_name());
-        holder.subtopicName.setText(getSubtopic(topic.getSubtopic()));
+        holder.subtopicName.setText(getSubtopic(topic.getTopic_name()));
         holder.iconText.setText(topic.getTopic_name().substring(0,1));
 
         holder.iconImage.setImageResource(R.drawable.bg_circle);
-        holder.iconImage.setColorFilter(getIconColor(topic.getLogo_color()));
+        int randomColor = topic.getLogo_color();
+        //int randomColor = topic.getLogo_color( ?:ThreadLocalRandom.current().nextInt(0,  11);
+        holder.iconImage.setColorFilter(getIconColor(randomColor));
 
         holder.mainContainer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,21 +65,18 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         });
     }
 
-    public void setFilteredList(List<Maths.Topic> mFilteredList) {
+    public void setFilteredList(List<TopicList.TopicDetails> mFilteredList) {
         this.mFilteredList = mFilteredList;
     }
 
-    public List<Maths.Topic> getFilteredList() {
+    public List<TopicList.TopicDetails> getFilteredList() {
         return mFilteredList;
     }
 
-    private String getSubtopic(List<Maths.Topic.Subtopic> subtopic){
+    private String getSubtopic(String topicName){
         StringBuilder builder = new StringBuilder();
         builder.append("Learn About ");
-        for(int i = 0; i < subtopic.size(); i++){
-            builder.append(subtopic.get(i).getName());
-            builder.append(",");
-        }
+        builder.append(topicName);
         return builder.toString();
     }
 

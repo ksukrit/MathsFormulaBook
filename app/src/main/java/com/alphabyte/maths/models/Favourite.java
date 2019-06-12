@@ -4,13 +4,13 @@ import java.util.List;
 
 public class Favourite {
 
-    List<Maths.Topic> topicList;
+    List<TopicList.TopicDetails> topicList;
 
-    public List<Maths.Topic> getTopicList() {
+    public List<TopicList.TopicDetails> getTopicList() {
         return topicList;
     }
 
-    public void setTopicList(List<Maths.Topic> topicList) {
+    public void setTopicList(List<TopicList.TopicDetails> topicList) {
         this.topicList = topicList;
     }
 

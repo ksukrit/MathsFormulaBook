@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.alphabyte.maths.models.Favourite;
 import com.alphabyte.maths.models.Maths;
+import com.alphabyte.maths.models.TopicList;
 import com.google.gson.Gson;
 import com.orhanobut.hawk.Hawk;
 
@@ -62,19 +63,22 @@ public class PreferenceHelper {
         return favourite;
     }
 
-    public void addTopic(Maths.Topic topic) {
-        List<Maths.Topic> topicList;
+    public void addTopic(Maths.Topic topic,String fileName) {
+        List<TopicList.TopicDetails> topicList;
+        TopicList.TopicDetails topicDetails = new TopicList.TopicDetails();
+        topicDetails.setTopic_name(topic.getTopic_name());
+        topicDetails.setTopic_file_name(fileName);
         int flag = 0;
         if(favourite != null && favourite.length() != 0){
             Favourite fav = gson.fromJson(favourite, Favourite.class);
             topicList = fav.getTopicList();
-            for(Maths.Topic t : topicList){
-                if(t.getTopic_name().equals(topic.getTopic_name())){
+            for(TopicList.TopicDetails t : topicList){
+                if(t.getTopic_name().equals(topicDetails.getTopic_name())){
                     flag = 1;
                 }
             }
             if(flag == 0){
-                topicList.add(topic);
+                topicList.add(topicDetails);
             }
             fav.setTopicList(topicList);
             favourite = gson.toJson(fav);
@@ -82,23 +86,23 @@ public class PreferenceHelper {
         }else {
             Favourite fav = new Favourite();
             topicList = new ArrayList<>();
-            topicList.add(topic);
+            topicList.add(topicDetails);
             fav.setTopicList(topicList);
             favourite = gson.toJson(fav);
             Hawk.put(FAVOURITE_TOPIC,favourite);
         }
     }
 
-    public void removeTopic(Maths.Topic topic){
-        List<Maths.Topic> topicList;
-        List<Maths.Topic> newList;
+    public void removeTopic(Maths.Topic topic,String filename){
+        List<TopicList.TopicDetails> topicList;
+        List<TopicList.TopicDetails> newList;
         newList = new ArrayList<>();
         String output;
         int index = -1;
         String favString = getFavouriteList();
         Favourite fav = gson.fromJson(favString,Favourite.class);
         topicList = fav.getTopicList();
-        for(Maths.Topic t: topicList) {
+        for(TopicList.TopicDetails t: topicList) {
             if (!t.getTopic_name().equals(topic.getTopic_name())) {
                 newList.add(t);
             }

@@ -7,13 +7,22 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
         app:title="General">
         <Preference
             app:iconSpaceReserved="false"
+            app:key="about"
+            app:title="About Us"/>
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="license"
+            app:title="Open Source Licenses"/>
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="rate"
+            app:title="Rate App"/>
+        <Preference
+            app:iconSpaceReserved="false"
             app:key="feedback"
             app:title="Send Feedback"
             app:summary="Report technical issues or suggest new features"/>
-        <Preference
-            app:iconSpaceReserved="false"
-            app:key="about"
-            app:title="About Us"/>
+
     </PreferenceCategory>
 
 
@@ -34,7 +43,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             app:iconSpaceReserved="false"
             app:entries="@array/settings_list_preference_font"
             app:entryValues="@array/settings_list_preference_values"
-            app:defaultValue="2"
+            app:defaultValue="3"
             app:summary="Set font size according to your liking"/>
 
 

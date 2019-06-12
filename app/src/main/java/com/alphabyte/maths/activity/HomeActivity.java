@@ -5,6 +5,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
 import com.alphabyte.maths.R;
 import com.alphabyte.maths.fragment.FavouriteFragment;
 import com.alphabyte.maths.fragment.HomeFragment;
@@ -13,18 +19,15 @@ import com.alphabyte.maths.helper.PreferenceHelper;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-
 public class HomeActivity extends AppCompatActivity {
 
     AppBarLayout appBarLayout;
     private Menu menu;
     int filter = 1;
     boolean darkTheme;
+    HomeFragment homeFragment;
+    SettingsFragment settingsFragment;
+    FavouriteFragment favouriteFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,11 @@ public class HomeActivity extends AppCompatActivity {
         if(darkTheme){
             setTheme(R.style.AppTheme_DarkTheme);
         }
+
+
+        favouriteFragment = new FavouriteFragment();
+        settingsFragment = new SettingsFragment();
+        homeFragment = new HomeFragment();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
@@ -45,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         bottomNav.setSelectedItemId(R.id.navigation_home);
 
+
         ColorStateList colorStateList = ContextCompat.getColorStateList(this,R.color.nav_item_foreground_dark);
 
         if(darkTheme){
@@ -54,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new HomeFragment()).commit();
+                    homeFragment).commit();
         }
 
 
@@ -66,21 +75,22 @@ public class HomeActivity extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
+                    selectedFragment = homeFragment;
 
                     switch (item.getItemId()) {
                         case R.id.navigation_home:
                             filter = 1;
                             getSupportActionBar().setTitle("Topics");
-                            selectedFragment = new HomeFragment();
+                            selectedFragment = homeFragment;
                             break;
                         case R.id.navigation_favourite:
                             filter = 0;
                             getSupportActionBar().setTitle("Favourites");
-                            selectedFragment = new FavouriteFragment();                            break;
+                            selectedFragment = favouriteFragment;                           break;
                         case R.id.navigation_settings:
                             filter = 0;
                             getSupportActionBar().setTitle("Settings");
-                            selectedFragment = new SettingsFragment();
+                            selectedFragment = settingsFragment;
                             break;
                     }
 

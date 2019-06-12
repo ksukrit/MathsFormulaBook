@@ -14,21 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.alphabyte.maths.R;
-import com.alphabyte.maths.activity.DetailsActivity;
-import com.alphabyte.maths.adapter.HomeAdapter;
-import com.alphabyte.maths.helper.ClickListener;
-import com.alphabyte.maths.helper.DividerItemDecoration;
-import com.alphabyte.maths.helper.PreferenceHelper;
-import com.alphabyte.maths.models.Maths;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.gson.Gson;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
@@ -37,13 +22,29 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.alphabyte.maths.R;
+import com.alphabyte.maths.activity.DetailsActivity;
+import com.alphabyte.maths.adapter.HomeAdapter;
+import com.alphabyte.maths.helper.ClickListener;
+import com.alphabyte.maths.helper.DividerItemDecoration;
+import com.alphabyte.maths.helper.PreferenceHelper;
+import com.alphabyte.maths.models.TopicList;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.gson.Gson;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HomeFragment extends Fragment {
 
-    private List<Maths.Topic> topicList;
-    private List<Maths.Topic> filterList;
+    private List<TopicList.TopicDetails> topicDetailsList;
+    private List<TopicList.TopicDetails> filterList;
     private static String PACKAGE_NAME;
     private HomeAdapter adapter;
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -70,26 +71,28 @@ public class HomeFragment extends Fragment {
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(getContext());
 
         try {
-            rawData = AssetJSONFile("maths.json",getContext());
-            Maths maths = gson.fromJson(rawData,Maths.class);
-            topicList = maths.getTopic();
-            filterList.addAll(topicList);
-            Log.d("Result", "onCreate() returned: " + topicList.get(0).getTopic_name() );
-            adapter = new HomeAdapter(topicList, getContext(), new ClickListener() {
+            rawData = AssetJSONFile("topics.json",getContext());
+            TopicList topicList = gson.fromJson(rawData,TopicList.class);
+            //Maths maths = gson.fromJson(rawData,Maths.class);
+            topicDetailsList = topicList.getTopicDetails();
+            filterList.addAll(topicDetailsList);
+            //Log.d("Result", "onCreate() returned: " + topicList.get(0).getTopic_name() );
+            adapter = new HomeAdapter(topicDetailsList, getContext(), new ClickListener() {
                 @Override
                 public void onClicked(int position) {
-                    Maths.Topic topic = filterList.get(position);
+                    TopicList.TopicDetails topic = filterList.get(position);
 
                     Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                    /*
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("topic_data", topic);
+                    bundle.putString("topic_file_name",topic.getTopic_file_name());
+                    */
+                    intent.putExtra("topic_file_name",topic.getTopic_file_name());
                     intent.putExtra("topic_selected", topic.getTopic_name());
-                    intent.putExtras(bundle);
-                    intent.putExtra("subtopic_index", 0);
+                    //intent.putExtras(bundle);
 
                     Bundle params = new Bundle();
                     params.putString("topic_name",topic.getTopic_name());
-                    params.putInt("topic_subtopic_count",topic.getTopic_subtopic_count());
                     mFirebaseAnalytics.logEvent("view_topic", params);
 
                     startActivity(intent);
@@ -233,13 +236,13 @@ public class HomeFragment extends Fragment {
                 String searchQuery = newText.toLowerCase();
 
                 if (searchQuery.isEmpty()){
-                    adapter.setFilteredList(topicList);
+                    adapter.setFilteredList(topicDetailsList);
                     adapter.notifyDataSetChanged();
                     setData();
                     return  true;
                 } else {
-                    List<Maths.Topic> filteredList = new ArrayList<>();
-                    for (Maths.Topic t : topicList){
+                    List<TopicList.TopicDetails> filteredList = new ArrayList<>();
+                    for (TopicList.TopicDetails t : topicDetailsList){
                         if ( t.getTopic_name().toLowerCase().contains(searchQuery)){
                             filteredList.add(t);
                         }
