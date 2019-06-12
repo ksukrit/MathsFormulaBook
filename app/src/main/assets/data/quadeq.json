@@ -1,0 +1,43 @@
+{
+  "topic_name": "Quadratic Equations",
+  "topic_subtopic_count": 2,
+  "logo_color": 0,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Solving A Quadratic Equation",
+      "images": "No",
+      "formula": "When $a \\ne 0$, there are two solutions to \\(ax^2 + bx + c = 0\\) and they are $$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$",
+      "information": [
+        "a is the co-efficient of x<sup><small>2</small></sup>",
+        "b is the co-efficient of x",
+        "c is the constant term"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Root Of The Equation :- $$x^2 + 5x + 6 = 0$$",
+        "solution": "Here a = 1 , b = 5 , c = 6 <br> Putting Values In The Quadratic Formula <br> $$x = \\frac{-5 \\pm \\sqrt{5^2 - 24}}{2}$$ <br> $$x = -2 , -3$$"
+      }
+    },
+    {
+      "name": "Nature of Quadratic Equation's roots",
+      "images": "No",
+      "formula": "$$D = b^2 - 4ac$$",
+      "information": [
+        "D is called the Discriminant",
+        "If D > 0 , Then The Equation Has Real And Distinct Roots",
+        "If D = 0 , Then The Equation Has Real And Equal Roots",
+        "If D < 0 , Then The Equation Has Imaginary Roots"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Nature of the roots Of the equation :- $$x^2 + 5x + 6 = 0$$",
+        "solution": "Here a = 1 , b = 5 , c = 6 <br> Putting Values In The formula <br> $$D = 5^2 - 24$$ <br> $$D = 1$$ <br> $$D > 0$$ <br> Therefore the Roots are Real And Distinct"
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "topic_name": "Number System",
+  "topic_subtopic_count": 6,
+  "logo_color": 4,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Natural Numbers",
+      "images": "No",
+      "formula": "All Numbers From 1 to Infinity are natural numbers",
+      "information": [
+        "1,2,3,4,5 ... Are Natural Numbers",
+        "It is commanly denoted by symbol N"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Whole Numbers",
+      "images": "No",
+      "formula": "All Numbers From 0 to Infinity are natural numbers",
+      "information": [
+        "0,1,2,3,4,5 ... Are Whole Numbers",
+        "It is commanly denoted by symbol W"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Integers",
+      "images": "No",
+      "formula": "All Positive and Negative Numbers are known as Integers",
+      "information": [
+        "-4,-3,-2,-1,0,1,2,3,4 are Integers",
+        "It is commanly denoted by symbol Z"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Rational numbers",
+      "images": "No",
+      "formula": "A number 'r' is called a rational number if it can be written in the form <br> $$\\frac{p}{q}$$",
+      "information": [
+        "Where p and q are integers and q != 0",
+        "The decimal expansion of a rational number is either terminating or non-terminating recurring",
+        "It is commanly denoted by symbol Q"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Irrational numbers",
+      "images": "No",
+      "formula": "A number 's' is called an irrational number if it cannot be written in the form <br> $$\\frac{p}{q}$$ <br>Examples Of Irrational Numbers are : <br> $$\\pi , \\sqrt{2}$$",
+      "information": [
+        "Where p and q are integers and q != 0",
+        "The decimal expansion of a irrational number is non-terminating,non-terminating recurring"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Real numbers",
+      "images": "No",
+      "formula": "Collection of All Rational And Irrational Numbers",
+      "information": [
+        "Where p and q are integers and q != 0",
+        "It is commanly denoted by symbol R"
+      ],
+      "display_formula": true,
+      "display_information": true
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "topic_name": "Surface Area",
+  "topic_subtopic_count": 2,
+  "logo_color": 0,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Cube",
+      "images": "file:///android_asset/images/cube.png",
+      "formula": "$$TSA = 6a^2$$ <br> $$LSA = 4c^2$$",
+      "information": [
+        "a is the side of the Cube",
+        "TSA is the Total surface area of the Cube",
+        "LSA is the Lateral Surface area of the Cube"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Cuboid",
+      "images": "file:///android_asset/images/cuboid.png",
+      "formula": "$$TSA = 2(lb + bh + hl)$$ <br> $$LSA = 2(l+b)h$$",
+      "information": [
+        "l is the length of the Cuboid",
+        "b is the breadth of the Cuboid",
+        "h is the height of the Cuboid",
+        "TSA is the Total surface area of the Cuboid",
+        "LSA is the Lateral Surface area of the Cuboid"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Cylinder",
+      "images": "file:///android_asset/images/cylinder.png",
+      "formula": "$$TSA = 2.\\pi.r(h+r)$$ <br> $$CSA = 2.\\pi.r.h$$",
+      "information": [
+        "r is the Radius of the Cylinder",
+        "h is the height of the Cylinder",
+        "TSA is the Total surface area of the Cylinder",
+        "CSA is the Curved Surface area of the Cylinder"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Cone",
+      "images": "file:///android_asset/images/cone.png",
+      "formula": "$$TSA = \\pi.r(r+l)$$ <br> $$CSA = \\pi.r.l$$ <br> Where $$l = \\sqrt{r^2 + h^2}$$",
+      "information": [
+        "r is the Radius of the Cone",
+        "h is the height of the Cone",
+        "l is the Slant Height of the Cone",
+        "TSA is the Total surface area of the Cone",
+        "CSA is the Curved Surface area of the Cone"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Sphere",
+      "images": "file:///android_asset/images/sphere.png",
+      "formula": "$$TSA = 4.\\pi.r^2$$",
+      "information": [
+        "r is the Radius of the Sphere",
+        "TSA is the Total surface area of the Sphere"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Hemisphere",
+      "images": "file:///android_asset/images/hemisphere.png",
+      "formula": "$$TSA = 3.\\pi.r^2$$ <br> $$CSA = 2.\\pi.r^2$$",
+      "information": [
+        "r is the Radius of the hemisphere",
+        "TSA is the Total surface area of the hemisphere",
+        "CSA is the Curved Surface area of the Hemisphere"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Frustum",
+      "images": "file:///android_asset/images/frustum.png",
+      "formula": "$$TSA = \\pi.l(r_1+r_1) + \\pi.r_1^2 + \\pi.r_2^2$$ <br> $$CSA = \\pi.(r_1 + r_2).l$$ <br> Where $$l = \\sqrt{(r_1 - r_2)^2 + h^2}$$",
+      "information": [
+        "h is the height of the Frustum",
+        "r<sub><small>1</small></sub> and r<sub><small>2</small></sub> are radii of the two circular ends",
+        "l is the Slant Height of the Frustum",
+        "TSA is the Total surface area of the Frustum",
+        "CSA is the Curved Surface area of the Frustum"
+      ],
+      "display_formula": true,
+      "display_information": true
+    }
+  ]
+}

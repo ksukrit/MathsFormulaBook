@@ -1,0 +1,84 @@
+{
+  "topic_name": "Coordinate System",
+  "topic_subtopic_count": 2,
+  "logo_color": 7,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Cartesian Plane",
+      "images": "file:///android_asset/images/cartesian-plane.png",
+      "formula": "No",
+      "information": [
+        "The x-axis is called the abscissa",
+        "The y-axis is called the ordinate"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Distance Between Two Points",
+      "images": "No",
+      "formula": "$$\\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$$",
+      "information": [
+        "x<sub><small>1</small></sub> & y<sub><small>1</small></sub> are coordinates of the first point",
+        "x<sub><small>2</small></sub> & y<sub><small>2</small></sub> are coordinates of the second point"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Mid-Point Of The Line Joining Two Points",
+      "images": "No",
+      "formula": "$$P = \\left(\\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2}\\right)$$",
+      "information": [
+        "x<sub><small>1</small></sub> & y<sub><small>1</small></sub> are coordinates of the first point",
+        "x<sub><small>2</small></sub> & y<sub><small>2</small></sub> are coordinates of the second point",
+        "P is the Mid-Point Of The Line Joining The Two Points"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": false,
+        "question": "Find the Zero of the Equation f(x)",
+        "solution": "Use The Quadratic Formula"
+      }
+    },
+    {
+      "name": "Point That Divides The Line Joining Two Points in The Ratio m:n",
+      "images": "No",
+      "formula": "$$P = \\left(\\frac{mx_2 + nx_1}{m+n}, \\frac{my_2 + ny_1}{m+n} \\right)$$",
+      "information": [
+        "x<sub><small>1</small></sub> & y<sub><small>1</small></sub> are coordinates of the first point",
+        "x<sub><small>2</small></sub> & y<sub><small>2</small></sub> are coordinates of the second point",
+        "P divides the line joining the two points in the Ratio Of m:n"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Area Of The Triangle Formed By Three Points",
+      "images": "file:///android_asset/images/coord_form_1.png",
+      "formula": "No",
+      "information": [
+        "x<sub><small>1</small></sub> & y<sub><small>1</small></sub> are coordinates of the first point",
+        "x<sub><small>2</small></sub> & y<sub><small>2</small></sub> are coordinates of the second point",
+        "x<sub><small>3</small></sub> & y<sub><small>3</small></sub> are coordinates of the third point",
+        "A is the area of the Triangle formed by these 3 Points",
+        "If A = 0, Then these 3 Points are colinear"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Distance of Point from Line",
+      "images": "No",
+      "formula": "$$ d = \\frac{ax_1 + by_1  + c}{\\sqrt{a^2 + b^2}} $$",
+      "information": [
+        "ax + by + c = 0 is the equation of line",
+        "x1,y1 is the point"
+      ],
+      "display_formula": true,
+      "display_information": true
+    }
+  ]
+}

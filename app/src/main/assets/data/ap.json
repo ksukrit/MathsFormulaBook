@@ -1,0 +1,68 @@
+{
+  "topic_name": "Arithmetic progression",
+  "topic_subtopic_count": 2,
+  "logo_color": 4,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "General Form of An AP",
+      "images": "No",
+      "formula": "$$a_n = a + (n-1)d$$",
+      "information": [
+        "a is the first term of the AP",
+        "a<sub>n</sub> is the n<sup>th</sup> term of the AP",
+        "d is the common difference of the AP"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "nth Term from the End Of A Finite AP",
+      "images": "No",
+      "formula": "$$l_n = l - (n-1)d$$",
+      "information": [
+        "l is the last term of the AP",
+        "l<sub>n</sub> is the n<sup>th</sup> term of the AP from the end",
+        "d is the common difference of the AP"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Sum of n Terms in an AP",
+      "images": "No",
+      "formula": "$$S_n = \\frac{n}{2}[2a + (n-1)d]$$ <br> Or <br> $$S_n = \\frac{n}{2}(a + l)$$",
+      "information": [
+        "a is the first term of the AP",
+        "l is the last term of the AP",
+        "n is the Number of terms",
+        "d is the common difference of the AP",
+        "S<sub>n</sub> is sum of n terms in an AP"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "nth term if Sum of n Terms and (n-1) terms is given",
+      "images": "No",
+      "formula": "$$a_n = S_n - S_{n-1}$$",
+      "information": [
+        "a<sub>n</sub> is the n<sup>th</sup> term of the AP",
+        "S<sub>n</sub> is sum of n terms in an AP",
+        "S<sub>n-1</sub> is sum of n terms in an AP"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Arithmetic Mean",
+      "images": "No",
+      "formula": "$$b = (a+c)/2$$",
+      "information": [
+        "b is the Arithmetic mean of any two numbers a and c"
+      ],
+      "display_formula": true,
+      "display_information": true
+    }
+  ]
+}

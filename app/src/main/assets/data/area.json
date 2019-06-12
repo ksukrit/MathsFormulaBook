@@ -1,0 +1,144 @@
+{
+  "topic_name": "Area",
+  "topic_subtopic_count": 1,
+  "logo_color": 8,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Area Of a Triangle (Heron's Formula)",
+      "images": "No",
+      "formula": "$$A = \\sqrt{s(s-a)(s-b)(s-c)}$$ <br> Where $$s = \\frac{a+b+c}{2}$$",
+      "information": [
+        "a,b,c are the sides of the Triangle",
+        "s is the semi-perimeter of the Triangle"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Area Of a Right Angled Triangle ",
+      "images": "No",
+      "formula": "$$A = \\frac{1}{2} b h $$",
+      "information": [
+        "b is the base of the Triangle",
+        "h is the height of the Triangle"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Area of a Right angled triangle of Height 4cm and Base 5cm",
+        "solution": "Given h = 4cm, b = 5cm <br> $$A = \\frac{1}{2}.4.5 $$ <br> $$A = 10cm^2$$"
+      }
+    },
+    {
+      "name": "Area Of a Equilateral Triangle ",
+      "images": "No",
+      "formula": "$$A = \\frac{\\sqrt{3} a^2}{4} $$",
+      "information": [
+        "a is the side of the Triangle"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Area of an Equilateral triangle of side 4cm",
+        "solution": "Given a = 4 cm <br> $$A = \\frac{\\sqrt{3}.4^2}{4}  $$ <br> $$A = \\sqrt{3}.4 cm^2$$"
+      }
+    },
+    {
+      "name": "Area Of Triangle when Two Sides and Included Angle are known ",
+      "images": "No",
+      "formula": "$$A = \\frac{1}{2} a b \\sin \\theta $$",
+      "example": {
+        "displayExample": true,
+        "question": "Find the Area of triangle whose two sides 4cm and 6cm and the included angle is 30<sup><small>0</small></sup>",
+        "solution": "Given a = 4 cm b = 6cm <br> $$A = \\frac{1}{2}.4.6.\\sin.30  $$ <br> $$A = 6 cm^2$$"
+      },
+      "information": [
+        "a,b  are the two side of the Triangle",
+        "theta is the Angle between the Two sides"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Area Of A Rectangle",
+      "images": "file:///android_asset/images/2dfigures/rectangle.png",
+      "formula": "$$A = LB$$",
+      "example": {
+        "displayExample": true,
+        "question": "Find the Area of a rectangle of Length 4cm and Width 5cm",
+        "solution": "Given l = 4cm, w = 5cm <br> $$A = 4.5$$ <br> $$A = 20cm^2$$"
+      },
+      "information": [
+        "A is The Area Of The Rectangle",
+        "L is Length Of The Rectangle",
+        "B is Breadth Of The Rectangle"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Area Of A Square",
+      "images": "file:///android_asset/images/2dfigures/square.png",
+      "formula": "$$A = s^2$$",
+      "example": {
+        "displayExample": true,
+        "question": "Find the Area of the Square of Side 4cm",
+        "solution": "Given s = 4cm <br> $$A = 4^2 $$ <br> $$A = 16 cm^2$$"
+      },
+      "information": [
+        "A is The Area Of The Square",
+        "s is Length Of The Side Of The Square"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Area Of A Circle",
+      "images": "file:///android_asset/images/circle/circle.png",
+      "formula": "$$A = \\pi r^2$$",
+      "example": {
+        "displayExample": true,
+        "question": "Find the area of a circle of Radius 7cm",
+        "solution": "Given r = 7cm <br> $$A = \\frac{22}{7}.7.7$$ <br> $$ A = 22 . 7$$ <br> $$A = 154 cm^2$$"
+      },
+      "information": [
+        "A is The Area Of The Circle",
+        "Pi is Approximately 3.14 or <sup>22</sup>&frasl;<sub>7</sub>",
+        "r is The Radius Of The Circle"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Area of a Sector",
+      "images": "file:///android_asset/images/circle/sector.png",
+      "formula": "$$A = \\frac{\\theta}{360} \\pi r^2$$",
+      "example": {
+        "displayExample": true,
+        "question": "A  sector is cut from a circle of radius 21cm. The angle of the sector is 150<sup><small>0</small></sup>. Find the area",
+        "solution": "Given r = 21cm <br> $$A = \\frac{\\theta}{360}.\\frac{22}{7}.21.21$$ <br> $$ A = \\frac{1155}{2}$$ <br> $$A = 577.5 cm^2$$"
+      },
+      "information": [
+        "A is the Area of The Circular Sector",
+        "Pi is Approximately 3.14 or <sup>22</sup>&frasl;<sub>7</sub>",
+        "r is The Radius Of The Circle"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Area Of Segment",
+      "images": "file:///android_asset/images/circle/segment.png",
+      "formula": "$$r^2[\\frac{\\theta \\pi}{360} - \\frac{\\sin \\theta}{2}]$$",
+      "information": [
+        "Pi is Approximately 3.14 or <sup>22</sup>&frasl;<sub>7</sub>",
+        "r is The Radius Of The Circle"
+      ],
+      "display_formula": true,
+      "display_information": true
+    }
+  ]
+}

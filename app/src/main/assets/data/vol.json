@@ -1,0 +1,83 @@
+{
+  "topic_name": "Volume",
+  "topic_subtopic_count": 2,
+  "logo_color": 7,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Volume of Cube",
+      "images": "file:///android_asset/images/cube.png",
+      "formula": "$$V = a^3$$",
+      "information": [
+        "a is the Side of the Cube"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Volume of Cuboid",
+      "images": "file:///android_asset/images/cuboid.png",
+      "formula": "$$V = l*b*h$$",
+      "information": [
+        "l is the Length of the Cuboid",
+        "b is the Breadth of the Cuboid",
+        "h is the Height of the Cuboid"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Volume of Cylinder",
+      "images": "file:///android_asset/images/cylinder.png",
+      "formula": "$$V = \\pi.r^2.h$$",
+      "information": [
+        "r is the radius of the Cylinder",
+        "h is the height of the Cylinder"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Volume of Cone",
+      "images": "file:///android_asset/images/cone.png",
+      "formula": "$$V = \\frac{1}{3}\\pi.r^2.h$$",
+      "information": [
+        "r is the radius of the Cone",
+        "h is the height of the Cone"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Volume of Sphere",
+      "images": "file:///android_asset/images/sphere.png",
+      "formula": "$$V = \\frac{4}{3}\\pi.r^3$$",
+      "information": [
+        "r is the radius of the Sphere"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Volume of Hemisphere",
+      "images": "file:///android_asset/images/hemisphere.png",
+      "formula": "$$V = \\frac{2}{3}\\pi.r^3$$",
+      "information": [
+        "r is the radius of the Hemisphere"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Volume of Frustum",
+      "images": "file:///android_asset/images/frustum.png",
+      "formula": "$$V = \\frac{1}{3}.h.\\sqrt{(r_1)^2 + r_1.r_2 + (r_2)^2}$$",
+      "information": [
+        "h is the height of the Frustum",
+        "r<sub><small>1</small></sub> and r<sub><small>2</small></sub> are radii of the two circular ends"
+      ],
+      "display_formula": true,
+      "display_information": false
+    }
+  ]
+}

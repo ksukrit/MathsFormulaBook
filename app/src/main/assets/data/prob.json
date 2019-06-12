@@ -1,0 +1,20 @@
+{
+  "topic_name": "Probability",
+  "topic_subtopic_count": 1,
+  "logo_color": 8,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Probability of An Event E",
+      "images": "No",
+      "formula": "$$P(E) = \\frac{No Of Favourable Outcomes}{Total No Of Outcomes}$$",
+      "information": [
+        "If two coins are tossed simultaneously there are 4 total outcomes : HH, TT, HT, TH",
+        "If three coins are tossed simultaneously there are 8 total outcomes",
+        "In a well shuffled deck of cards there are 52 cards"
+      ],
+      "display_formula": true,
+      "display_information": false
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "topic_name": "Square",
+  "topic_subtopic_count": 2,
+  "logo_color": 8,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Area Of A Square",
+      "images": "file:///android_asset/images/square.png",
+      "formula": "$$A = s^2$$",
+      "information": [
+        "A is The Area Of The Square",
+        "s is Length Of The Side Of The Square"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Area of the Square of Side 4cm",
+        "solution": "Given s = 4cm <br> $$A = 4^2 $$ <br> $$A = 16 cm^2$$"
+      }
+    },
+    {
+      "name": "Perimeter Of Square",
+      "images": "No",
+      "formula": "$$P = 4s$$",
+      "information": [
+        "P is The Perimeter Of The Square",
+        "s is The Length of the Side Of The Square"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Perimeter of the Square of Side 5cm",
+        "solution": "Given s = 5cm <br> $$P = 4 x 5 $$ <br> $$P = 20 cm$$"
+      }
+    },
+    {
+      "name": "Diagonal Of A Square",
+      "images": "No",
+      "formula": "$$D = \\sqrt{2}.s$$",
+      "information": [
+        "D is The Diagonal Of The Square",
+        "s is The Length of the Side Of The Square"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Diagonal of the Square of Side 5cm",
+        "solution": "Given s = 5cm <br> $$D = 5.\\sqrt{2} cm$$"
+      }
+    }
+  ]
+}

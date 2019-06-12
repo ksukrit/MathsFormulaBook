@@ -1,0 +1,87 @@
+{
+  "topic_name": "Circles",
+  "topic_subtopic_count": 2,
+  "logo_color": 10,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Area Of A Circle",
+      "images": "file:///android_asset/images/circle/circle.png",
+      "formula": "$$A = \\pi r^2$$",
+      "information": [
+        "A is The Area Of The Circle",
+        "Pi is Approximately 3.14 or <sup>22</sup>&frasl;<sub>7</sub>",
+        "r is The Radius Of The Circle"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the area of a circle of Radius 7cm",
+        "solution": "Given r = 7cm <br> $$A = \\frac{22}{7}.7.7$$ <br> $$ A = 22 . 7$$ <br> $$A = 154 cm^2$$"
+      }
+    },
+    {
+      "name": "Circumference Of A Circle",
+      "images": "No",
+      "formula": "$$C = 2\\pi r$$",
+      "information": [
+        "C is the Circumference Of The Circle",
+        "Pi is Approximately 3.14 or <sup>22</sup>&frasl;<sub>7</sub>",
+        "r is The Radius Of The Circle"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the circumference of a circle of Radius 7cm",
+        "solution": "Given r = 7cm <br> $$C = 2.\\frac{22}{7}.7$$ <br> $$ C = 22 . 2$$ <br> $$C = 44 cm$$"
+      }
+    },
+    {
+      "name": "Area of a Sector",
+      "images": "file:///android_asset/images/circle/sector.png",
+      "formula": "$$A = \\frac{\\theta}{360}.\\pi.r^2$$",
+      "information": [
+        "A is the Area of The Circular Sector",
+        "Pi is Approximately 3.14 or <sup>22</sup>&frasl;<sub>7</sub>",
+        "r is The Radius Of The Circle"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "A  sector is cut from a circle of radius 21cm. The angle of the sector is 150<sup><small>0</small></sup>. Find the area",
+        "solution": "Given r = 21cm <br> $$A = \\frac{\\theta}{360}.\\frac{22}{7}.21.21$$ <br> $$ A = \\frac{1155}{2}$$ <br> $$A = 577.5 cm^2$$"
+      }
+    },
+    {
+      "name": "Length of a Sector",
+      "images": "No",
+      "formula": "$$L = \\frac{\\theta}{360}.2.\\pi.r$$",
+      "information": [
+        "L is the Length of The Circular Sector",
+        "Pi is Approximately 3.14 or <sup>22</sup>&frasl;<sub>7</sub>",
+        "r is The Radius Of The Circle"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "A  sector is cut from a circle of radius 21cm. The angle of the sector is 150<sup><small>0</small></sup>. Find the length of the arc",
+        "solution": "Given r = 21cm <br> $$L = \\frac{\\theta}{360}.2.\\frac{22}{7}.21$$ <br> $$ L = 55 cm$$"
+      }
+    },
+    {
+      "name": "Area Of Segment",
+      "images": "file:///android_asset/images/circle/segment.png",
+      "formula": "$$r^2[\\frac{\\theta.\\pi}{360} - \\frac{\\sin.\\theta}{2}]$$",
+      "information": [
+        "Pi is Approximately 3.14 or <sup>22</sup>&frasl;<sub>7</sub>",
+        "r is The Radius Of The Circle"
+      ],
+      "display_formula": true,
+      "display_information": true
+    }
+  ]
+}

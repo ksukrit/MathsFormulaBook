@@ -1,0 +1,53 @@
+{
+  "topic_name": "Trigonometry",
+  "topic_subtopic_count": 5,
+  "logo_color": 7,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Basics",
+      "images": "file:///android_asset/images/trignometry/trig_1.png",
+      "formula": "No",
+      "information": [
+        "SOH CAH TOA is an easy way to remember how to compute Sine,Cosine and Tangent",
+        "SOH stands for Sine equals Opposite over Hypotenuse.",
+        "CAH stands for Cosine equals Adjacent over Hypotenuse.",
+        "TOA stands for Tangent equals Opposite over Adjacent."
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Trigonometric ratio of some common angles",
+      "images": "file:///android_asset/images/trignometry/trig_2.png",
+      "formula": "No",
+      "information": [
+        "Sin is an Increasing Function",
+        "Cosine is a Decreasing Function",
+        "Tangent is equal to Sin/Cosine"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Trigonometric Identities 1",
+      "images": "No",
+      "formula": "$$\\sin^2\\theta + \\cos^2\\theta = 1$$ <br> $$\\tan^2\\theta + 1 = \\sec^2\\theta$$ <br> $$1 + \\cot^2\\theta = \\csc^2\\theta$$",
+      "information": [
+        "These Identities are commanly known as the Pythagorean Identities"
+      ],
+      "display_formula": true,
+      "display_information": true
+    },
+    {
+      "name": "Trigonometric Identities 2",
+      "images": "No",
+      "formula": "$$\\sin(A+B) = sinAcosB + cosAsinB$$\r\n$$\\cos(A+B) = cosAcosB - sinAsinB$$\r\n$$\\tan(A+B)=\\frac{tanA + tanB}{1-tanAtanB}$$",
+      "information": [
+        "These Identities are commanly known as the Pythagorean Identities"
+      ],
+      "display_formula": true,
+      "display_information": true
+    }
+  ]
+}

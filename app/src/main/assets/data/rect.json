@@ -1,0 +1,59 @@
+{
+  "topic_name": "Rectangle",
+  "topic_subtopic_count": 3,
+  "logo_color": 5,
+  "logo_image": "No",
+  "subtopic": [
+    {
+      "name": "Area Of A Rectangle",
+      "images": "file:///android_asset/images/rectangle.png",
+      "formula": "$$A = L*B$$",
+      "information": [
+        "A is The Area Of The Rectangle",
+        "L is Length Of The Rectangle",
+        "B is Breadth Of The Rectangle"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Area of a rectangle of Length 4cm and Width 5cm",
+        "solution": "Given l = 4cm, w = 5cm <br> $$A = 4.5$$ <br> $$A = 20cm^2$$"
+      }
+    },
+    {
+      "name": "Perimeter Of Rectangle",
+      "images": "No",
+      "formula": "$$P = 2(L+B)$$",
+      "information": [
+        "P is The Perimeter Of The Rectangle",
+        "L is Length Of The Rectangle",
+        "B is Breadth Of The Rectangle"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Perimeter of a rectangle of Length 4cm and Width 5cm",
+        "solution": "Given l = 4cm, w = 5cm <br> $$P = 2(4 + 5)$$ <br> $$P = 18cm$$"
+      }
+    },
+    {
+      "name": "Diagonal Of A Rectangle",
+      "images": "No",
+      "formula": "$$D = \\sqrt{L^2 + B^2}$$",
+      "information": [
+        "D is The Diagonal Of The Rectangle",
+        "L is Length Of The Rectangle",
+        "B is Breadth Of The Rectangle"
+      ],
+      "display_formula": true,
+      "display_information": true,
+      "example": {
+        "displayExample": true,
+        "question": "Find the Diagonal Of A Rectangle Of Length 3 cm and Breadth 4 cm",
+        "solution": "We know that : <br> $$D = \\sqrt{L^2 + B^2}$$ <br> $$D = \\sqrt{3^2 + 4^2}$$  <br> $$D = \\sqrt{25}$$ <br> $$D = 5 cm $$"
+      }
+    }
+  ]
+}
