@@ -1,6 +1,10 @@
-package com.alphabyte.maths.activity;
+package com.alphabyte.mathsformulabook.activity;
 
+import android.content.Intent;
+import android.content.pm.ShortcutInfo;
+import android.content.pm.ShortcutManager;
 import android.content.res.ColorStateList;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,13 +15,19 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.alphabyte.maths.R;
-import com.alphabyte.maths.fragment.FavouriteFragment;
-import com.alphabyte.maths.fragment.HomeFragment;
-import com.alphabyte.maths.fragment.SettingsFragment;
-import com.alphabyte.maths.helper.PreferenceHelper;
+import com.alphabyte.mathsformulabook.R;
+import com.alphabyte.mathsformulabook.fragment.FavouriteFragment;
+import com.alphabyte.mathsformulabook.fragment.HomeFragment;
+import com.alphabyte.mathsformulabook.fragment.SettingsFragment;
+import com.alphabyte.mathsformulabook.helper.PreferenceHelper;
+import com.alphabyte.mathsformulabook.models.Favourite;
+import com.alphabyte.mathsformulabook.models.TopicList;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -28,6 +38,9 @@ public class HomeActivity extends AppCompatActivity {
     HomeFragment homeFragment;
     SettingsFragment settingsFragment;
     FavouriteFragment favouriteFragment;
+
+    //TODO : FIX SHORTCUT FUNCTION
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +79,51 @@ public class HomeActivity extends AppCompatActivity {
                     homeFragment).commit();
         }
 
+        //updateShortcut();
 
+
+    }
+
+    @Override
+    protected void onPause() {
+        //updateShortcut();
+        super.onPause();
+    }
+
+    void updateShortcut() {
+        PreferenceHelper preferenceHelper = new PreferenceHelper(this);
+        Gson gson = new Gson();
+        String favourites = preferenceHelper.getFavouriteList();
+        Favourite fav = gson.fromJson(favourites, Favourite.class);
+        List<TopicList.TopicDetails> topicList;
+        if (fav != null) {
+            topicList = fav.getTopicList();
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
+                ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
+                if (shortcutManager.getDynamicShortcuts().size() != 0) {
+                    shortcutManager.removeAllDynamicShortcuts();
+                }
+                List<ShortcutInfo> shortcutInfoList = new ArrayList<>();
+                int count = 0;
+                for (int i = topicList.size(); count < 3; i--) {
+                    TopicList.TopicDetails t = topicList.get(i);
+                    Intent intent = new Intent(this, DetailsActivity.class);
+                    intent.putExtra("topic_file_name", t.getTopic_file_name());
+                    intent.putExtra("topic_selected", t.getTopic_name());
+                    intent.setAction(Intent.ACTION_VIEW);
+                    ShortcutInfo shortcut = new ShortcutInfo.Builder(this, t.getTopic_name())
+                            .setShortLabel(t.getTopic_name())
+                            .setIntent(intent)
+                            .build();
+                    shortcutInfoList.add(shortcut);
+                    count++;
+                }
+                if (shortcutInfoList.size() != 0) {
+                    shortcutManager.setDynamicShortcuts(shortcutInfoList);
+
+                }
+            }
+        }
     }
 
 

@@ -1,4 +1,4 @@
-package com.alphabyte.maths.activity;
+package com.alphabyte.mathsformulabook.activity;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -15,13 +15,13 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alphabyte.maths.R;
-import com.alphabyte.maths.adapter.TopicAdapter;
-import com.alphabyte.maths.helper.ClickListener;
-import com.alphabyte.maths.helper.PreferenceHelper;
-import com.alphabyte.maths.models.Favourite;
-import com.alphabyte.maths.models.Maths;
-import com.alphabyte.maths.models.TopicList;
+import com.alphabyte.mathsformulabook.R;
+import com.alphabyte.mathsformulabook.adapter.TopicAdapter;
+import com.alphabyte.mathsformulabook.helper.ClickListener;
+import com.alphabyte.mathsformulabook.helper.PreferenceHelper;
+import com.alphabyte.mathsformulabook.models.Favourite;
+import com.alphabyte.mathsformulabook.models.Maths;
+import com.alphabyte.mathsformulabook.models.TopicList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;

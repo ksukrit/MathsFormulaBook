@@ -1,4 +1,4 @@
-package com.alphabyte.maths.adapter;
+package com.alphabyte.mathsformulabook.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -14,9 +14,12 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.alphabyte.maths.R;
-import com.alphabyte.maths.helper.ClickListener;
-import com.alphabyte.maths.models.Maths;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.alphabyte.mathsformulabook.R;
+import com.alphabyte.mathsformulabook.helper.ClickListener;
+import com.alphabyte.mathsformulabook.models.Maths;
 import com.alphabyte.mathview.MathView;
 import com.bumptech.glide.Glide;
 import com.github.florent37.expansionpanel.ExpansionHeader;
@@ -25,8 +28,6 @@ import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
 
 import java.util.List;
 
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

@@ -1,4 +1,4 @@
-package com.alphabyte.maths.models;
+package com.alphabyte.mathsformulabook.models;
 
 import java.io.Serializable;
 import java.util.List;

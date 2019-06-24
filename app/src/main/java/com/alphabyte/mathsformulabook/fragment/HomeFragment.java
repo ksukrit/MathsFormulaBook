@@ -1,4 +1,4 @@
-package com.alphabyte.maths.fragment;
+package com.alphabyte.mathsformulabook.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,13 +23,13 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alphabyte.maths.R;
-import com.alphabyte.maths.activity.DetailsActivity;
-import com.alphabyte.maths.adapter.HomeAdapter;
-import com.alphabyte.maths.helper.ClickListener;
-import com.alphabyte.maths.helper.DividerItemDecoration;
-import com.alphabyte.maths.helper.PreferenceHelper;
-import com.alphabyte.maths.models.TopicList;
+import com.alphabyte.mathsformulabook.R;
+import com.alphabyte.mathsformulabook.activity.DetailsActivity;
+import com.alphabyte.mathsformulabook.adapter.HomeAdapter;
+import com.alphabyte.mathsformulabook.helper.ClickListener;
+import com.alphabyte.mathsformulabook.helper.DividerItemDecoration;
+import com.alphabyte.mathsformulabook.helper.PreferenceHelper;
+import com.alphabyte.mathsformulabook.models.TopicList;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 
@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
     private HomeAdapter adapter;
     private FirebaseAnalytics mFirebaseAnalytics;
     private PreferenceHelper preferenceHelper;
-    private int fontSize[] = {8,10,14,16,20};
+    boolean isAnimated = false;
 
 
     @BindView(R.id.recyclerView)
@@ -138,6 +138,20 @@ public class HomeFragment extends Fragment {
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),RecyclerView.VERTICAL));
         recyclerView.setAdapter(adapter);
 
+    }
+
+    @Override
+    public void onResume() {
+        isAnimated = true;
+        recyclerView.clearAnimation();
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        recyclerView.clearAnimation();
+        isAnimated = false;
+        super.onPause();
     }
 
     private static String AssetJSONFile(String filename, Context context) throws IOException {

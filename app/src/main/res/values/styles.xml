@@ -20,13 +20,12 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="themePrimary">@color/greenA400</item>
-        <item name="themePrimaryDark">@color/greenA700</item>
-        <item name="themeAccent">@color/colorAccentgreen</item>
+        <item name="themePrimary">@color/colorPrimary</item>
+        <item name="themePrimaryDark">@color/colorPrimaryDark</item>
+        <item name="themeAccent">@color/colorAccent</item>
         <item name="themeContentBackground">@color/white</item>
         <item name="themeContentTextColor">@android:color/darker_gray</item>
         <item name="themeContentTextColoOnPrimary">@color/white</item>
-        <item name="themeTextColorSuccess">@color/greenA700</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

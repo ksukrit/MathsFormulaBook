@@ -1,4 +1,4 @@
-package com.alphabyte.maths.adapter;
+package com.alphabyte.mathsformulabook.adapter;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alphabyte.maths.R;
-import com.alphabyte.maths.helper.ClickListener;
-import com.alphabyte.maths.models.TopicList;
+import com.alphabyte.mathsformulabook.R;
+import com.alphabyte.mathsformulabook.helper.ClickListener;
+import com.alphabyte.mathsformulabook.models.TopicList;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.alphabyte.maths.fragment;
+package com.alphabyte.mathsformulabook.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,14 +14,14 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.alphabyte.maths.R;
-import com.alphabyte.maths.activity.DetailsActivity;
-import com.alphabyte.maths.adapter.HomeAdapter;
-import com.alphabyte.maths.helper.ClickListener;
-import com.alphabyte.maths.helper.DividerItemDecoration;
-import com.alphabyte.maths.helper.PreferenceHelper;
-import com.alphabyte.maths.models.Favourite;
-import com.alphabyte.maths.models.TopicList;
+import com.alphabyte.mathsformulabook.R;
+import com.alphabyte.mathsformulabook.activity.DetailsActivity;
+import com.alphabyte.mathsformulabook.adapter.HomeAdapter;
+import com.alphabyte.mathsformulabook.helper.ClickListener;
+import com.alphabyte.mathsformulabook.helper.DividerItemDecoration;
+import com.alphabyte.mathsformulabook.helper.PreferenceHelper;
+import com.alphabyte.mathsformulabook.models.Favourite;
+import com.alphabyte.mathsformulabook.models.TopicList;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;

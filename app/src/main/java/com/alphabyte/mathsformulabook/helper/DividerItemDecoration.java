@@ -1,4 +1,4 @@
-package com.alphabyte.maths.helper;
+package com.alphabyte.mathsformulabook.helper;
 
 import android.content.Context;
 import android.content.res.TypedArray;
