@@ -16,7 +16,6 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.alphabyte.mathsformulabook.R;
-import com.alphabyte.mathsformulabook.fragment.FavouriteFragment;
 import com.alphabyte.mathsformulabook.fragment.HomeFragment;
 import com.alphabyte.mathsformulabook.fragment.SettingsFragment;
 import com.alphabyte.mathsformulabook.helper.PreferenceHelper;
@@ -37,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     boolean darkTheme;
     HomeFragment homeFragment;
     SettingsFragment settingsFragment;
-    FavouriteFragment favouriteFragment;
+    com.alphabyte.mathsformulabook.fragment.FavouriteFragment favouriteFragment;
 
     //TODO : FIX SHORTCUT FUNCTION
 
@@ -51,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         }
 
 
-        favouriteFragment = new FavouriteFragment();
+        favouriteFragment = new com.alphabyte.mathsformulabook.fragment.FavouriteFragment();
         settingsFragment = new SettingsFragment();
         homeFragment = new HomeFragment();
 

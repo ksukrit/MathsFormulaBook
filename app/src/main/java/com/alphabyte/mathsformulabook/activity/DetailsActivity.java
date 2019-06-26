@@ -48,8 +48,6 @@ public class DetailsActivity extends AppCompatActivity implements ClickListener 
     boolean darkTheme;
     int fontSize;
     PreferenceHelper helper;
-    Favourite fav;
-    String favString;
     boolean favourite;
 
 
@@ -75,14 +73,12 @@ public class DetailsActivity extends AppCompatActivity implements ClickListener 
 
         final String topicName = getIntent().getStringExtra("topic_selected");
         final String topicFileLocation = getIntent().getStringExtra("topic_file_name");
+        final int topicColor = getIntent().getIntExtra("topic_color", 1);
 
-
-        /*Bundle bundle = getIntent().getExtras();
-        final Maths.Topic topic = (Maths.Topic) bundle.getSerializable("topic_data");
-        */
         try {
             String rawData = AssetJSONFile(topicFileLocation,this);
             Maths.Topic topic = gson.fromJson(rawData, Maths.Topic.class);
+            topic.setLogo_color(topicColor);
             String favString = helper.getFavouriteList();
             Favourite fav = gson.fromJson(favString,Favourite.class);
             if(fav !=null){

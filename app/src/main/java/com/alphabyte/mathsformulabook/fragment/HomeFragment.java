@@ -89,6 +89,7 @@ public class HomeFragment extends Fragment {
                     */
                     intent.putExtra("topic_file_name",topic.getTopic_file_name());
                     intent.putExtra("topic_selected", topic.getTopic_name());
+                    intent.putExtra("topic_color", topic.getLogo_color());
                     //intent.putExtras(bundle);
 
                     Bundle params = new Bundle();

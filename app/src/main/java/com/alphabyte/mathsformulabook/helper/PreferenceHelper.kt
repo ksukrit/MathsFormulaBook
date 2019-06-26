@@ -64,6 +64,7 @@ class PreferenceHelper(internal var mContext: Context) {
         val topicDetails = TopicList.TopicDetails()
         topicDetails.topic_name = topic.topic_name
         topicDetails.topic_file_name = fileName
+        topicDetails.logo_color = topic.logo_color
         var flag = 0
         if (favourite != null && favourite!!.length != 0) {
             val fav = gson.fromJson(favourite, Favourite::class.java)
@@ -80,9 +81,9 @@ class PreferenceHelper(internal var mContext: Context) {
             favourite = gson.toJson(fav)
             Hawk.put<String>(FAVOURITE_TOPIC, favourite)
         } else {
-            val fav = Favourite()
             topicList = ArrayList<TopicList.TopicDetails>()
             topicList.add(topicDetails)
+            val fav = Favourite(topicList)
             fav.topicList = topicList
             favourite = gson.toJson(fav)
             Hawk.put<String>(FAVOURITE_TOPIC, favourite)
